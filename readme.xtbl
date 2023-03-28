@@ -1,15 +1,15 @@
 28/03/23
 A basic hello world program written in go
 
-Created go.mod file using the following command line phrase:
+--Created go.mod file using the following command line phrase:
 
     go mod init ff100id
 
-Created the visual studio code file: 
+--Created the visual studio code file: 
 
     ff100id.code-workspace    
 
-Created main.exe file code to show the "hello world" title on console:
+--Created main.exe file code to show the "hello world" title on console:
 
    go build main.go
 
