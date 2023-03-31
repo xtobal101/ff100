@@ -13,3 +13,19 @@ A basic hello world program written in go
 
    go build main.go
 
+
+31/03/23
+
+A basic hello world program using the Fyne gui framework 
+
+--Intalled Fyne using:  
+
+     go get fyne.io/fyne/v2@latest
+
+--Build the main.exe without the poping a console using:
+  
+     go build -ldflags -H=windowsgui main.go 
+
+--Note: Used the following to fix the building isues:
+     
+     go mod tidy     
