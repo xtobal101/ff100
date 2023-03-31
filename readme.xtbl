@@ -1,3 +1,84 @@
+03/04/23
+widget Binding for value self refreshing and Keyboard Controll added 
+
+-- main.go, go.sum  and go.mod altered to include more elements from fyne
+
+     "fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/data/binding"
+	"fyne.io/fyne/v2/driver/desktop"
+	"fyne.io/fyne/v2/widget"
+
+-- "fyne.io/fyne/v2/data/binding" 
+    This helps to automatically change de values on the fyne widgtes
+    note on main.go: 
+
+                    
+          type GBL struct {
+               strLabel1       binding.String
+               strLabel2       binding.String
+               currentQuestion int
+               questionario    map[int]*Question
+          }
+
+          ...
+
+          
+          func (gbl *GBL) init() {
+               
+          ...
+
+               gbl.strLabel1 = binding.NewString()
+               gbl.strLabel1.Set("Hola tio ...")
+
+               gbl.strLabel2 = binding.NewString()
+               gbl.strLabel2.Set("Current Question ?")
+
+          }
+          ...
+
+          func main() {
+
+
+               myApp := app.New()
+               myWindow := myApp.NewWindow("Hola tio ...")
+
+               gbl := new(GBL) // this object stores binding.string to update labels based on keyboard events.
+               gbl.init()
+
+               myWindow.SetContent(widget.NewLabelWithData(gbl.strLabel2))
+               ...
+               myWindow.ShowAndRun()
+
+          }
+
+
+          
+
+-- The  keyboard controll is defined on the following functions of main.go
+        * func (gbl *GBL) buttonUp(ev *fyne.KeyEvent)
+        ...
+        *	deskCanvas.SetOnKeyUp(gbl.buttonUp)
+        
+
+
+31/03/23
+
+A basic hello world program using the Fyne gui framework 
+
+--Intalled Fyne using:  
+
+     go get fyne.io/fyne/v2@latest
+
+--Build the main.exe without the poping a console using:
+  
+     go build -ldflags -H=windowsgui main.go 
+
+--Note: Used the following to fix the building isues:
+     
+     go mod tidy     
+
+
 28/03/23
 A basic hello world program written in go
 
