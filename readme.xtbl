@@ -53,8 +53,6 @@ widget Binding for value self refreshing and Keyboard Controll added
           }
 
 
-          
-
 -- The  keyboard controll is defined on the following functions of main.go
         * func (gbl *GBL) buttonUp(ev *fyne.KeyEvent)
         ...
