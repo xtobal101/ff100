@@ -1,0 +1,18 @@
+
+#-ldflags -H=windowsgui  #Add this to build and exe that does not call a cmd console window when executed
+
+then place  "C:\Program Files\MongoDB\Server\6.0\bin" in PATH
+as administrator: 
+mdir c:\data\db
+run:
+mongod --dbpath="c:\data\db"
+
+
+To stop it 
+taskkill /f /im mongod.exe
+
+-----------------
+RoadMap.
+This app will develop a Golang/ MongoDB/ MongoAtlas/ Docker/ AWS/ EC2  Backend for the slimNgel treatment.
+
+
